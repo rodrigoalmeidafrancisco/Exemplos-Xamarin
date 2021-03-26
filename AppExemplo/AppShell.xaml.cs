@@ -1,7 +1,6 @@
-﻿using AppExemplo.ViewModels;
-using AppExemplo.Views;
+﻿using AppExemplo.Views.Home;
+using AppExemplo.Views.Login;
 using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace AppExemplo
@@ -11,8 +10,13 @@ namespace AppExemplo
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            RegisterRoutes();
+        }
+
+        private void RegisterRoutes()
+        {
+            //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

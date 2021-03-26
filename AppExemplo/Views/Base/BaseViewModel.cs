@@ -1,16 +1,21 @@
-﻿using AppExemplo.Models;
-using AppExemplo.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
-namespace AppExemplo.ViewModels
+namespace AppExemplo.Views.Base
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        //public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+
+        public BaseViewModel()
+        {
+
+        }
+
+        #region Base Xamarin
 
         bool isBusy = false;
         public bool IsBusy
@@ -39,8 +44,8 @@ namespace AppExemplo.ViewModels
             return true;
         }
 
-        #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
+        
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
@@ -49,6 +54,7 @@ namespace AppExemplo.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        #endregion
+
+        #endregion Base Xamarin
     }
 }

@@ -1,8 +1,5 @@
-﻿using AppExemplo.Services;
-using AppExemplo.Views;
-using System;
+﻿using AppExemplo.Views.Login;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace AppExemplo
 {
@@ -12,9 +9,10 @@ namespace AppExemplo
         public App()
         {
             InitializeComponent();
+            //DependencyService.Register<MockDataStore>();
 
-            DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            //Defino em qual Page o APP irá iniciar
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
