@@ -1,5 +1,5 @@
-# Exemplos-Xamarin
-Projetos de Exemplos utilizando o Xamarin 
+# Exemplo-Xamarin
+Projetos com exemplos utilizando o Xamarin e API .NetCore 
 
 # Referências
 https://github.com/xamarin/xamarin-forms-samples
