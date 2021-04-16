@@ -34,5 +34,13 @@
     <string>AppExemplo</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Este aplicativo precisa acessar a câmera para tirar fotos.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Este aplicativo precisa de acesso às fotos.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Este aplicativo precisa de acesso ao microfone.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Este aplicativo precisa de acesso à galeria de fotos.</string>
 </dict>
 </plist>
