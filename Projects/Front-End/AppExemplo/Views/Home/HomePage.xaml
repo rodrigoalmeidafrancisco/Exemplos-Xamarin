@@ -1,12 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppExemplo.Views.Home.HomePage">
+             x:Class="AppExemplo.Views.Home.HomePage"
+             Title="Exemplo Xamarin">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ContentView>
+            <ScrollView Padding="20">
+                <StackLayout>
+                
+                    <Label TextColor="Black" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Olá, "/>
+                                <Span Text="{Binding TxtNameUser}" />
+                                <Span Text="!"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Escolha abaixo a funcionalidade que deseja visualizar:" TextColor="Black" />
+
+                    <Button Text="PLUGIN: Xam.Plugin.Media" Margin="0,10,0,0" Command="{Binding XamPluginMediaCommand}"  />
+
+                </StackLayout>
+            </ScrollView>
+        </ContentView>
     </ContentPage.Content>
 </ContentPage>

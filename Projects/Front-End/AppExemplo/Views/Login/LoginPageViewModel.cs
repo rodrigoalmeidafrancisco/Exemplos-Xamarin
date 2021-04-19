@@ -1,4 +1,5 @@
-﻿using AppExemplo.Views.Base;
+﻿using AppExemplo.Commun.Helpers;
+using AppExemplo.Views.Base;
 using AppExemplo.Views.Home;
 using ExtensionCore;
 using ExtensionXamarin;
@@ -9,7 +10,7 @@ namespace AppExemplo.Views.Login
 {
     public class LoginPageViewModel : BaseViewModel
     {
-        public LoginPageViewModel()
+        public LoginPageViewModel(Page currentPage) : base(currentPage)
         {
             //_ = CheckLoginAsync();
             LoginCommand = new Command(async () => { await LoginClickedAsync(); }, 
@@ -44,8 +45,6 @@ namespace AppExemplo.Views.Login
 
         public async Task CheckLoginAsync()
         {
-            //await Task.Delay(10); //Para dar tempo do APP carregar e poder enviar a HomePage com sucesso, caso já tenha sido feito o login.
-
             bool login = HelperPreferences.Get(GlobalApp.Preferences_Key_Login, false, GlobalApp.Preferences_Shared_Login);
             string nameUser = HelperPreferences.Get(GlobalApp.Preferences_Key_NameUser, string.Empty, GlobalApp.Preferences_Shared_Login);
 
@@ -59,9 +58,8 @@ namespace AppExemplo.Views.Login
         {
             //Inicio o MainPage aqui para que seja possível realizar a navegação no Shell.
             Application.Current.MainPage = new AppShell();
-
             ShellNavigationState state = Shell.Current.CurrentState;
-            await Shell.Current.GoToAsync($"//{nameof(HomePage)}", true);
+            await HelperNavigate.BaseShell(nameof(HomePage));
         }
 
         #endregion Methods

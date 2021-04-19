@@ -8,11 +8,11 @@ namespace AppExemplo.Views.Base
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        //public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        protected Page _currentPage;
 
-        public BaseViewModel()
+        public BaseViewModel(Page currentPage)
         {
-
+            _currentPage = currentPage;
         }
 
         #region Base Xamarin

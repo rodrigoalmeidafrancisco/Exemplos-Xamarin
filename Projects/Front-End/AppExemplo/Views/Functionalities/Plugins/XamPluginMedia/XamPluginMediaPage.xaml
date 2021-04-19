@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppExemplo.Views.Functionalities.Plugins.XamPluginMedia.XamPluginMediaPage"
+             Title="Plugin: Xam.Plugin.Media">
+    <ContentPage.Content>
+        <ContentView>
+            <ScrollView Padding="20">
+                <StackLayout>
+
+                    <StackLayout Margin="10">
+                        <Image Source="{Binding ImageUploaded}" Margin="0,0,0,10" />
+                        <Label TextColor="Black" HorizontalOptions="CenterAndExpand" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Nome do Arquivo: "/>
+                                    <Span Text="{Binding FileName}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+                    <Button Text="Obter Arquivo" Margin="0,10,0,0" Command="{Binding GetFileCommand}" />
+
+                    <Button Text="Obter Foto Galeria" Margin="0,10,0,0" Command="{Binding GetGalleryFileCommand}" />
+
+                    <Button Text="Tirar Foto Câmera (Frente)" Margin="0,10,0,0" Command="{Binding TakePictureCommand}" CommandParameter="1" />
+
+                    <Button Text="Tirar Foto Câmera (Traseira)" Margin="0,10,0,0" Command="{Binding TakePictureCommand}" CommandParameter="0" />
+
+                </StackLayout>
+            </ScrollView>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>

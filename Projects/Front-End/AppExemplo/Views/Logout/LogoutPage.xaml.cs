@@ -1,4 +1,4 @@
-﻿using AppExemplo.Views.Login;
+﻿using AppExemplo.Commun.Helpers;
 using ExtensionXamarin;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,7 +17,7 @@ namespace AppExemplo.Views.Logout
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await Navigation.PushAsync(new LoginPage(), true);
+            await HelperNavigate.LoginPageAsync(this);
         }
     }
 }

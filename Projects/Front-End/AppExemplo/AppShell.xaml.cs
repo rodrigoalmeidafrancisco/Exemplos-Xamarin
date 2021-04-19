@@ -1,6 +1,6 @@
-﻿using AppExemplo.Views.Home;
+﻿using AppExemplo.Views.Functionalities.Plugins.XamPluginMedia;
+using AppExemplo.Views.Home;
 using AppExemplo.Views.Logout;
-using System;
 using Xamarin.Forms;
 
 namespace AppExemplo
@@ -19,11 +19,11 @@ namespace AppExemplo
             //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(LogoutPage), typeof(LogoutPage));
-        }
 
-        private async void OnMenuItemClicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync("//LoginPage");
+            //Functionalities/Plugins
+            Routing.RegisterRoute(nameof(XamPluginMediaPage), typeof(XamPluginMediaPage));
+
         }
+        
     }
 }

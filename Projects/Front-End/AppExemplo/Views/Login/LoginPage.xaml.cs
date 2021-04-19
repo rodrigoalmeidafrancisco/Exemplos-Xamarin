@@ -15,7 +15,7 @@ namespace AppExemplo.Views.Login
             //Faz com que o valor preechido na tela ou no CS altere o valor da propriedade "LoginPageViewModel.Nome"
             EntryName.SetBinding(Entry.TextProperty, nameof(LoginPageViewModel.NameUser), mode: BindingMode.TwoWay);
             
-            this.BindingContext = _viewModel = new LoginPageViewModel();
+            this.BindingContext = _viewModel = new LoginPageViewModel(this);
         }
 
         protected async override void OnAppearing()
